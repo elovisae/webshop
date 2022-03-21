@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Nav from '../all/Nav';
 import './homePage.css'
 import NewsGallery from './NewsGallery';
+import Footer from '../all/Footer';
 
 
 const HomePage = () => {
@@ -25,9 +26,7 @@ const HomePage = () => {
 
           </section>
         </article>
-        <footer>
-
-        </footer>
+        <Footer />
     </div>
   )
 }
