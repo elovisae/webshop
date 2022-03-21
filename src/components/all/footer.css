@@ -1,0 +1,11 @@
+@import url('./main.css');
+
+footer{
+    margin-top: 40px;
+    background-color: rgb(236, 237, 243);
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    height:300px;
+    padding:20px;
+}
