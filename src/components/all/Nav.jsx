@@ -18,7 +18,7 @@ const Nav = () => {
       <ul>
           <li>Shop</li>
           <li>Bestsellers</li>
-          <li>New in</li>
+          <li><Link to='/new-in' className='link'>New in</Link></li>
           <li>About us</li>
           <li>Q&A</li>
       </ul>
