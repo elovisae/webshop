@@ -35,3 +35,11 @@ li:hover{
     align-items: baseline;
     padding: 0 60px;
 }
+#arrow{
+    transform: rotate(-90deg);
+    font-family: "Megrim";
+    font-size: 35px;
+}
+#arrow:hover{
+    cursor:pointer;
+}

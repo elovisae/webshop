@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <div>
         <Nav />
-        <article>
+        <main>
           <NewsGallery />
           <section className='newsletter-form'>
             <h2>Sign up and get 10% off!</h2>
@@ -25,7 +25,7 @@ const HomePage = () => {
             </form>
 
           </section>
-        </article>
+        </main>
         <Footer />
     </div>
   )
