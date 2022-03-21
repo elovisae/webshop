@@ -14,7 +14,7 @@ ul{
 h1{
     font-family: 'Megrim', Arial, Helvetica, sans-serif;
     line-height: 10px;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 400;
 }
 li{
@@ -22,4 +22,16 @@ li{
 }
 li:hover{
     border-bottom: 1px solid gray;
+}
+
+#shopping-bag{
+    width:40px;
+}
+
+#shit{
+    margin:0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 60px;
 }
