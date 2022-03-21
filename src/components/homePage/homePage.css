@@ -1,6 +1,41 @@
 @import url('../all/main.css');
 
-#gallery{
-    height:600px;
-    background-color:gray;
+.news-gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
+h2{
+    font-weight: 500;
+}
+
+
+input{
+    padding:10px;
+    border:1px solid gray;
+    border-radius: 5px;
+    width:600px;
+    outline: none;
+    margin:20px auto;
+}
+input:focus{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+footer{
+    height:200px;
+}
+button{
+    background-color: black;
+    color:white;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    height:48px;
+    cursor: pointer;
+    padding: 10px;
+}
+button:hover{
+    background-color: rgb(39, 39, 39) ;
+}
+

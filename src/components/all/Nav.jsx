@@ -8,7 +8,7 @@ const Nav = () => {
     <nav>
       <div id="shit">
         <p>hello</p>
-        <Link to='/' class="link"><h1>AMANDA</h1></Link>
+        <Link to='/' className="link"><h1>AMANDA</h1></Link>
         <div> 
           <img id="shopping-bag" src={cart} alt="" />
         </div>
