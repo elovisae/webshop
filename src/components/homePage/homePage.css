@@ -1,0 +1,6 @@
+@import url('../all/main.css');
+
+#gallery{
+    height:600px;
+    background-color:gray;
+}
