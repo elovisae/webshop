@@ -11,6 +11,7 @@ const app   = express()
 app.use(cors());
 app.use(bodyParser.json())
 
+// Add item
 app.post('/items', async (req, res) => {
     const item = new Item(req.body)
     
@@ -19,6 +20,7 @@ app.post('/items', async (req, res) => {
         .catch(error => console.log(error))
 })
 
+// Get all items
 app.get('/items', async (req, res) => {
     Item.find()
         .then(data => {
@@ -28,6 +30,7 @@ app.get('/items', async (req, res) => {
         .catch(error => console.log(error))
 })
 
+//Get specific item
 app.get('/items/:itemId', async (req, res) => {
     // console.log(req.params.itemId)
     Item.findById(req.params.itemId)
@@ -35,6 +38,7 @@ app.get('/items/:itemId', async (req, res) => {
         .catch(error => console.log(error))
 })
 
+// Delete specific item
 app.delete('/items/:itemId', async (req, res) => {
     Item.deleteOne({_id: req.params.itemId})
         .then(data => {
@@ -44,6 +48,7 @@ app.delete('/items/:itemId', async (req, res) => {
         .catch(error => console.log(data))
 })
 
+// Update specific item
 app.patch('/items/:itemId', async (req, res) => {
     Item.updateOne({_id : req.params.itemId}, 
         {$set: { 
