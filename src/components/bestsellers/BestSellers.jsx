@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../all/Nav'
 import Footer from '../all/Footer'
-import './newIn.css'
+import './bestSellers.css'
 import {
     beigeBag,
     blueMiniDress,
@@ -19,7 +19,7 @@ import {
 
 } from '../../img/clothing/clothing';
 
-const NewIn = () => {
+const BestSellers = () => {
   return (
     <div>
         <Nav/>
@@ -79,4 +79,4 @@ const NewIn = () => {
   )
 }
 
-export default NewIn
+export default BestSellers

@@ -1,13 +1,13 @@
 import HomePage from './components/homePage/HomePage';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import NewIn from './components/newIn/NewIn';
+import BestSellers from './components/bestsellers/BestSellers';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/new-in" element={<NewIn/>}/>
+        <Route path="/bestsellers" element={<BestSellers/>}/>
       </Routes>
     </Router>
   );
