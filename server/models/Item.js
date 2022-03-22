@@ -21,6 +21,14 @@ const itemSchema = new Schema({
     color: {
         type: Array,
         required: true
+    },
+    new: {
+        type: Boolean,
+        default: false
+    },
+    bestseller: {
+        type: Boolean,
+        default: false
     }
 });
 

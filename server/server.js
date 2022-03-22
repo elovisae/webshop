@@ -4,7 +4,6 @@ const mongoose      = require('mongoose') // Used for handling DB and giving noS
 const cors          = require('cors')       //Handling cross origin requests 
 const bodyParser    = require('body-parser')
 const Item          = require('./models/Item')
-const { dressPattern } = require('../src/img/clothing/clothing')
 
 
 //Create an express app (init express and save it to app variable)
@@ -12,6 +11,55 @@ const app   = express()
 app.use(cors());
 app.use(bodyParser.json())
 
+app.post('/items', async (req, res) => {
+    const item = new Item(req.body)
+    
+    item.save()
+        .then(result => console.log('item added', item))
+        .catch(error => console.log(error))
+})
+
+app.get('/items', async (req, res) => {
+    Item.find()
+        .then(data => {
+            res.json(data)
+            
+        })
+        .catch(error => console.log(error))
+})
+
+app.get('/items/:itemId', async (req, res) => {
+    // console.log(req.params.itemId)
+    Item.findById(req.params.itemId)
+        .then(data => res.json(data))
+        .catch(error => console.log(error))
+})
+
+app.delete('/items/:itemId', async (req, res) => {
+    Item.deleteOne({_id: req.params.itemId})
+        .then(data => {
+            console.log('Item deleted')
+            res.json(data)
+        })
+        .catch(error => console.log(data))
+})
+
+app.patch('/items/:itemId', async (req, res) => {
+    Item.updateOne({_id : req.params.itemId}, 
+        {$set: { 
+            img_link: req.body.img_link,
+            prize: req.body.prize,
+            bio: req.body.bio,
+            new: req.body.new,
+            bestseller: req.body.bestsellers
+        }
+        })
+        .then(data => {
+            console.log('Item patched')
+            res.json(data)
+        })
+        .catch(error => console.log(error))
+})
 
 
 mongoose.connect(
