@@ -6,6 +6,9 @@
     text-decoration: none;
     color: black;
 }
+.text-left{
+    text-align: left;
+}
 body{
     text-align:center;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;

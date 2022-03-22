@@ -1,5 +1,27 @@
 @import url('../all/main.css');
 
-#newin-main{
-    height:600px;
+
+.new-in-collage{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+
+.new-in-collage div img{
+    overflow: hidden;
+    max-width: 100%;
+}
+.new-in-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+.card p{
+    line-height: 0.2;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.prize{
+    font-weight: 500;
 }
