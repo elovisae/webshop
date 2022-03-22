@@ -11,10 +11,10 @@ const NewsGallery = () => {
                 <img src={beigeBag} alt="Beige bag" />
             </div>
             <div>  
-                <img src={blueMiniDress} alt="" />
+                <img src={blueMiniDress} alt="Blue mini dress" />
             </div>
             <div>
-                <img src={greenBlazer} alt="" />  
+                <img src={greenBlazer} alt="Green blazer" />  
             </div>
         </article>
     </section>
