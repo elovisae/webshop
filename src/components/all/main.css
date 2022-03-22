@@ -16,3 +16,7 @@ body{
 p, input, li{
     font-size: 20px;
 }
+main{
+    padding-top: 20px;
+    min-height:300px;
+}
