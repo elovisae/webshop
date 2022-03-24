@@ -1,6 +1,6 @@
 @import url('./main.css');
 
-nav{
+header{
     text-align:center;
     border-bottom: 1px solid rgb(223, 223, 223);
 }
@@ -24,9 +24,11 @@ li:hover{
     border-bottom: 1px solid gray;
 }
 
-#shopping-bag{
+.icon{
     width:40px;
+  
 }
+
 
 #shit{
     margin:0 auto;
@@ -34,6 +36,11 @@ li:hover{
     justify-content: space-between;
     align-items: baseline;
     padding: 0 60px;
+}
+
+#user-icon{
+    width:40px;
+    padding:7px;
 }
 #arrow{
     transform: rotate(-90deg);
