@@ -30,6 +30,10 @@ app.get('/items', async (req, res) => {
         .catch(error => console.log(error))
 })
 
+app.get('/', (req, res) => {
+    res.redirect('/items')
+}) 
+
 //Get specific item
 app.get('/items/:itemId', async (req, res) => {
     // console.log(req.params.itemId)
