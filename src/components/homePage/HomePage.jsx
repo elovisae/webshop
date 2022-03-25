@@ -13,7 +13,7 @@ const HomePage = () => {
   
   return (
     <div>
-        <Nav />
+        <Nav/>
         <main>
           <NewsGallery />
           <section className='newsletter-form'>

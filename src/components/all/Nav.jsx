@@ -13,8 +13,8 @@ const Nav = () => {
         <p id="arrow" onClick={() => navigate(-1)}>A</p>
         <Link to='/' className="link"><h1>AMANDA</h1></Link>
         <div> 
-          <Link to='/cart'><img id="user-icon" className="icon" src={user} alt="" /></Link>
-          <Link to='/login'><img className="icon" src={cart} alt="" /></Link>
+          <Link to='/login'><img id="user-icon" className="icon" src={user} alt="" /></Link>
+          <Link to='/cart'><img className="icon" src={cart} alt="" /></Link>
         </div>
       </div>
       <nav>

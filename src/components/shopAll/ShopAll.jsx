@@ -19,7 +19,7 @@ const ShopAll = () => {
         }   
     }
     
-    
+
   return (
     <div>
         <Nav/>

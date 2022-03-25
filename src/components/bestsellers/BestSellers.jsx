@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../all/Nav'
 import Footer from '../all/Footer'
-import './bestSellers.css'
+import '../all/items.css'
 import {
     beigeBag,
     blueMiniDress,
@@ -29,7 +29,7 @@ const BestSellers = () => {
             </aside>
             <main className='text-left'>
                 <h2>New in</h2>
-                <article className='new-in-collage'>
+                <article className='items-wrapper'>
                     <div className="card">
                         <img src={blueShorts} alt="blue shorts" />
                         <p>Blue shorts</p>

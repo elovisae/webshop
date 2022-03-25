@@ -1,7 +1,7 @@
 @import url('../all/main.css');
 
 
-.new-in-collage{
+.items-wrapper{
     width:100%;
     display:grid;
     grid-template-columns: repeat(4, 1fr);
@@ -9,7 +9,7 @@
 }
 
 
-.new-in-collage div img{
+.items-wrapper div img{
     overflow: hidden;
     max-width: 100%;
 }
