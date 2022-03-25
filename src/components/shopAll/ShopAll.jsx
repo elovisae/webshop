@@ -1,33 +1,28 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Nav from '../all/Nav';
 import Footer from '../all/Footer';
 import Items from '../all/Items';
 
 
 
-const ShopAll = () => {
-    const [items, setItems] = useState([])   
-    useEffect(() => {fetchAllItems()}, [])
-    async function fetchAllItems (){
-        try{
-            let response        = await fetch('http://localhost:3001/items')
-            console.log(response.statusText)
-            let items           = await response.json();
-            setItems(items);
-        }catch (error){
-            console.log(error)
-        }   
-    }
+const ShopAll = (props) => {
+    let items = props.items;
     
 
   return (
-    <div>
+    <>
         <Nav/>
-        <main>
-            <Items items={items}/>
-        </main>
+        <article className='content'>
+            <aside>
+                    SIDEBAR
+            </aside>
+            <main>
+                <h2>Shop all</h2>
+                <Items items={items}/>
+            </main>
+        </article>
         <Footer/>
-    </div>
+    </>
   )
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import Photo from './Photo'
 
 const ItemCard = (props) => {
-  console.log(props)
   return (
     <div className="card">
       <div className="item-description">

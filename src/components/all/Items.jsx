@@ -4,7 +4,6 @@ import './items.css'
 
 const Items = (props) => {
     const items = props.items;
-    console.log(items)
     
   return (
     <div className="items-wrapper">

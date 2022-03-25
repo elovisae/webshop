@@ -13,10 +13,7 @@
     overflow: hidden;
     max-width: 100%;
 }
-.new-in-wrapper{
-    display: grid;
-    grid-template-columns: 1fr 6fr;
-}
+
 .card p{
     line-height: 0.2;
     font-size: 18px;

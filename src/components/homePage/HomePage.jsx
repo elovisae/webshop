@@ -3,6 +3,7 @@ import Nav from '../all/Nav';
 import './homePage.css'
 import NewsGallery from './NewsGallery';
 import Footer from '../all/Footer';
+import image from '../../img/home.jpg'
 
 
 const HomePage = () => {
