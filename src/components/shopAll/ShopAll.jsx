@@ -17,7 +17,7 @@ const ShopAll = (props) => {
                     SIDEBAR
             </aside>
             <main>
-                <h2>Shop all</h2>
+                <h2 className='text-left'>Shop all</h2>
                 <Items items={items}/>
             </main>
         </article>

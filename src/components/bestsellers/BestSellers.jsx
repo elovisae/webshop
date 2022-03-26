@@ -41,7 +41,7 @@ const BestSellers = (props) => {
                 SIDEBAR
             </aside>
             <main className='text-left'>
-                <h2>New in</h2>
+                <h2>Bestsellers</h2>
                 <Items items={filteredItems}/>
             </main>
         </article>

@@ -14,10 +14,49 @@
     max-width: 100%;
 }
 
+.card{
+    position: relative;
+}
+.card select{
+    border-radius: 5px;
+}
+.card option{
+    padding: 0 10px;
+}
 .card p{
     line-height: 0.2;
     font-size: 18px;
     padding-left: 10px;
+}
+.item-img:hover,
+.photo-hover:hover .item-img{
+    backdrop-filter: blur(2px);
+    filter: blur(2px);
+}
+.item-img:hover + .photo-hover,
+.photo-hover:hover{
+    display: flex;
+    column-gap: 10px;
+}
+.hide{
+    display:none;
+}
+.photo-hover{
+    position:absolute;
+    top: 50%;
+    left: 80px;
+    background-color: white;
+    border:1px solid rgb(211, 211, 211);
+    padding:10px;
+    border-radius: 5px;
+}
+
+.add-item-png{
+    width:50px;
+}
+.add-item-png:hover,
+.card select{
+    cursor: pointer;
 }
 .prize{
     font-weight: 500;

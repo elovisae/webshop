@@ -20,55 +20,55 @@ const Photo = (props) => {
     switch (props.url) {
         case 'beigeBag':
             return(
-                <img src={beigeBag} alt="Green pants" />
+                <img className="item-img" src={beigeBag} alt="Green pants" />
                )
         case 'blueMiniDress':
             return(
-                <img src={blueMiniDress}/>
+                <img className="item-img" src={blueMiniDress}/>
             )
         case 'blueShorts':
             return(
-                <img src={blueShorts}/>
+                <img className="item-img" src={blueShorts}/>
             )
         case 'blueVest':
             return(
-                <img src={blueVest}/>
+                <img className="item-img" src={blueVest}/>
             )
         case 'dressPattern':
             return(
-                <img src={dressPattern} alt="Green pants" />
+                <img className="item-img" src={dressPattern} alt="Green pants" />
                 )
         case 'greenBlazer':
             return(
-                <img src={greenBlazer} alt="Green pants" />
+                <img className="item-img" src={greenBlazer} alt="Green pants" />
                 )
         case 'greenDress':
             return(
-                <img src={greenDress} alt="Green pants" />
+                <img className="item-img" src={greenDress} alt="Green pants" />
                 )
         case 'greenPants':
             return(
-                <img src={greenPants} alt="Green pants" />
+                <img className="item-img" src={greenPants} alt="Green pants" />
                 )
         case 'pinkBlazer':
             return(
-                 <img src={pinkBlazer} alt="Green pants" />
+                 <img className="item-img" src={pinkBlazer} alt="Green pants" />
                 )
         case 'pinkDress':
             return(
-                <img src={pinkDress}/>
+                <img className="item-img" src={pinkDress}/>
             )
         case 'pinkPants':
             return(
-                <img src={pinkPants}/>
+                <img className="item-img" src={pinkPants}/>
             )
         case 'tote':
             return(
-                <img src={tote}/>
+                <img className="item-img" src={tote}/>
             )
         case 'widePants':
             return(
-                <img src={widePants}/>
+                <img className="item-img" src={widePants}/>
             )
         default:
             return <p>No image found</p>
