@@ -1,0 +1,20 @@
+@import url('../all/main.css');
+
+.login-form{
+    margin: 20px auto;
+    border:1px solid gray;
+    width:600px;
+    padding: 20px;
+}
+
+form input{
+    width:400px;
+}
+
+.form-group{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+}

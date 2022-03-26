@@ -13,17 +13,28 @@ body{
     text-align:center;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
 }
-p, input, li{
+p, input, li, label{
     font-size: 20px;
+}
+input{
+    padding:10px;
+    border:1px solid gray;
+    border-radius: 5px;
+    width:600px;
+    outline: none;
+}
+input:focus{
+    border: 2px solid black;
+    border-radius: 5px;
 }
 select, option{
     font-size: 16px;
 }
 main{
-    padding-top: 20px;
     min-height:300px;
 }
 .content{
+    padding-top: 20px;
     display: grid;
     grid-template-columns: 1fr 6fr;
 }
