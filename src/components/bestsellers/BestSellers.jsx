@@ -1,7 +1,8 @@
 import React from 'react';
 import Nav from '../all/Nav'
 import Footer from '../all/Footer'
-import './bestSellers.css'
+import '../all/items.css'
+import Items from '../all/Items';
 import {
     beigeBag,
     blueMiniDress,
@@ -19,63 +20,33 @@ import {
 
 } from '../../img/clothing/clothing';
 
-const BestSellers = () => {
+const BestSellers = (props) => {
+    let items = props.items;
+    const filterItems = (items) => {
+        let filteredItems = [];
+            items.map(item => {
+                if(item.bestseller){
+                    filteredItems.push(item)
+                }
+            })
+        return filteredItems;
+    }
+    let filteredItems = filterItems(items);
+    
   return (
-    <div>
+    <>
         <Nav/>
-        <article className="new-in-wrapper">
+        <article className="content">
             <aside>
-                Yobro
+                SIDEBAR
             </aside>
             <main className='text-left'>
-                <h2>New in</h2>
-                <article className='new-in-collage'>
-                    <div className="card">
-                        <img src={blueShorts} alt="blue shorts" />
-                        <p>Blue shorts</p>
-                        <p className='prize'>299 sek</p>
-                    </div>
-                    <div className="card">
-                        <img src={pinkBlazer} alt="pink blazer" />
-                        <p>Pink blazer</p>
-                        <p className='prize'>499 sek</p>
-                    </div>
-                    <div className="card">
-                        <img src={widePants} alt="pink dress" />
-                        <p>Wide beige pants</p>
-                        <p className='prize'>699 sek</p>
-                    </div>
-                    <div className="card">
-                        <img src={pinkPants} alt="pink pants" />
-                        <p>Suit up pink pants</p>
-                        <p className='prize'>499 sek</p>
-                    </div>
-                    <div className="card">
-                        <img src={tote} alt="tote bag" />
-                        <p>Tote bag</p>
-                        <p className='prize'>199 sek</p>
-                    </div>
-                    <div className="card">
-                        <img src={greenPants} alt="green blazer" />
-                        <p>Green pants</p>
-                        <p className='prize'>299 sek</p>
-                    </div>
-                    <div className="card">
-                        <img src={blueVest} alt="blue vest" />
-                        <p>Blue vest</p>
-                        <p className='prize'>299 sek</p>
-                    </div>
-                    <div className='card'>
-                        <img src={dressPattern} alt="mini dress with colorful pattern" />
-                        <p>Mini dress</p>
-                        <p className='prize'>179 sek</p>
-                        
-                    </div>
-                </article>
+                <h2>Bestsellers</h2>
+                <Items items={filteredItems}/>
             </main>
         </article>
         <Footer/>
-    </div>
+    </>
   )
 }
 

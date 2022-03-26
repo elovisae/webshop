@@ -17,7 +17,7 @@ const Footer = () => {
             <p>Phone: +46 701 234 56 78</p>
         </div>
         <div>
-            <h3><Link to='/shop' className='link'>Shop now</Link></h3>
+            <h3><Link to='/shop-all' className='link'>Shop now</Link></h3>
             <p><Link to="/bestsellers" className="link">Bestsellers</Link></p>
             <p><Link to='/shop' className='link'>All clothes</Link></p>
             <p><Link to='/cart' className='link'>Your cart</Link></p>

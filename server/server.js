@@ -16,7 +16,10 @@ app.post('/items', async (req, res) => {
     const item = new Item(req.body)
     
     item.save()
-        .then(result => console.log('item added', item))
+        .then(result => {
+            console.log('item added', item)
+            res.send('Item added')
+        })
         .catch(error => console.log(error))
 })
 

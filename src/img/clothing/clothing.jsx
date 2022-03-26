@@ -12,7 +12,7 @@ import pinkPants from './pink-pants.jpg'
 import tote from './tote.jpg';
 import widePants from './wide-pants.jpg'
 
-export {
+export{
     beigeBag,
     blueMiniDress,
     blueShorts,
