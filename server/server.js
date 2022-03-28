@@ -11,6 +11,7 @@ const app   = express()
 app.use(cors());
 app.use(bodyParser.json())
 
+// ***************** ITEMS ***************
 // Add item
 app.post('/items', async (req, res) => {
     const item = new Item(req.body)
@@ -71,6 +72,11 @@ app.patch('/items/:itemId', async (req, res) => {
             res.json(data)
         })
         .catch(error => console.log(error))
+})
+
+// ***************** USERS ***************
+app.get('/users', async (req, res) => {
+    
 })
 
 

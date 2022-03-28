@@ -1,9 +1,11 @@
 import React from 'react'
 import HeaderOnly from '../all/HeaderOnly'
 import './form.css'
+import { useNavigate } from 'react-router-dom'
 import Footer from '../all/Footer'
 
 const Login = () => {
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
     }
@@ -24,7 +26,7 @@ const Login = () => {
                 <button>Log in</button>
             </form>
             <p>Not a member?</p>
-            <button>Register now</button>
+            <button onClick={() => navigate('/register')}>Register now</button>
         </main>
         {/* <Footer /> */}
     </div>
