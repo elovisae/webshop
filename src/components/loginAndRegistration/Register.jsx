@@ -9,27 +9,27 @@ const Register = () => {
     const [mail, setMail]               = useState('');
     const [date, setDate]               = useState('');
     const [password, setPassword]       = useState('');
-    const [validation, setValidation]   = useState([]);
+    const [validation, setValidation]   = useState('');
     const navigate                      = useNavigate();
 
-    const passwordValidation = () => { 
-        setValidation([])
-        if (password.length < 8){
-         setValidation(...validation, 'Password must be at least 8 characters');
-        }
-        if (password.search(/[a-z]/i) < 0){
-         setValidation(...validation, 'Password must contain at least one letter');
-        }
-        if (password.search(/[0-9]/) < 0) {
-          setValidation(...validation, "Your password must contain at least one digit."); 
-        }
-        if (validation.length > 0) {
-            let errors = [...validation]
-            errors.join('\n');
-          return false
-        }
-        return true
-    }
+     const passwordValidation = () => { 
+         let errors = [];
+         if (password.length < 8){
+          errors.push('Password must be at least 8 characters');
+         }
+         if (password.search(/[a-z]/i) < 0){
+          errors.push( 'Password must contain at least one letter');
+         }
+         if (password.search(/[0-9]/) < 0) {
+          errors.push("Your password must contain at least one digit."); 
+         }
+         if (validation.length > 0) {
+            let errorString = errors.join('\n')
+            setValidation(errorString);
+           return false
+         }
+         return true
+     }
     
     // const DateValidation = () => {
     //     let todaysDate = new Date();
@@ -42,19 +42,35 @@ const Register = () => {
         
     // }
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        setValidation('')
         //DateValidation();
         e.preventDefault();
         if(passwordValidation()){
-            let userInput = {
+            let userData = {
                 "firstname": firstname,
                 "lastname": lastname,
                 "mail": mail,
                 "date": date,
                 "password": password,
             }
-            console.log(userInput)
+            console.log(userData)   
+            try{
+                let response = await fetch('http://localhost:3001/users', {
+                    method: "POST",
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                    body: JSON.stringify(userData)
+                })
+                let data = await response.json()
+                setValidation(data.message)
+    
+            }catch(error){
+                console.log(error)
+            } 
         }
+        
         
        
     }
@@ -67,16 +83,16 @@ const Register = () => {
                 <div className="form-group">
                     <div className='name-form-group'>
                         <label htmlFor="name">Firstname:</label>
-                        <input  type="text" name='name' onChange={(e) => setFirstname(e.target.value)}/>
+                        <input  type="text" name='name' onChange={(e) => setFirstname(e.target.value)} required/>
                     </div>
                     <div className='name-form-group'> 
                         <label htmlFor="name">Lastname:</label>
-                        <input  type="text" name='name' onChange={(e) => setLastname(e.target.value)}/>
+                        <input  type="text" name='name' onChange={(e) => setLastname(e.target.value)} required/>
                     </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="mail">Mail:</label>
-                    <input type="mail" name='mail' onChange={(e) => setMail(e.target.value)}/>
+                    <input type="mail" name='mail' onChange={(e) => setMail(e.target.value)} required/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="birthday">Birthday:</label>
@@ -84,9 +100,9 @@ const Register = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} required/>
                 </div>
-                <p id="validation"></p>
+                <p id="validation">{validation}</p>
                 <button>Register</button>
             </form>
             <p>Already a member?</p>

@@ -21,6 +21,10 @@ const userSchema = new Schema ({
     birthday: {
         type: Date,
         required: false
+    },
+    purchases: {
+        type: Array,
+        required: false
     }
 })
 

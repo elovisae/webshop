@@ -4,6 +4,7 @@ const mongoose      = require('mongoose') // Used for handling DB and giving noS
 const cors          = require('cors')       //Handling cross origin requests 
 const bodyParser    = require('body-parser')
 const Item          = require('./models/Item')
+const User          = require('./models/User')
 
 
 //Create an express app (init express and save it to app variable)
@@ -76,7 +77,39 @@ app.patch('/items/:itemId', async (req, res) => {
 
 // ***************** USERS ***************
 app.get('/users', async (req, res) => {
-    
+    User.find()
+        .then(data => {
+            res.json(data)
+        })
+})
+app.get('/users/:userId', async (req, res) => {
+    User.findById(req.params.userId)
+        .then(data => res.json(data))
+        .catch(error => console.log(error))
+})
+
+app.post('/users', async(req, res) => {
+    console.log('Post request made')
+    const user = new User(req.body);
+    console.log(user);
+    const isMailAlreadyRegistered = await User.exists({mail: user.mail});
+
+    if (isMailAlreadyRegistered){
+        res.send({message: 'This mail is already registered, try logging in'})
+    }else{
+        user.save()
+            .then(data => res.send({message: 'You are now registered! :)'}))
+            .catch(error => console.log(error))
+    }
+})
+
+app.delete('/users/:userId', async(req, res) => {
+    User.deleteOne({_id : req.params.userId})
+        .then(data => 
+            {console.log('User deleted')
+            res.json(data)
+        })
+        .catch(error => console.log(error))
 })
 
 
