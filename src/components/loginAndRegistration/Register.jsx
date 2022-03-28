@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
-    const [name, setName]           = useState('');
-    const [mail, setMail]           = useState('');
-    const [date, setDate]           = useState('');
-    const [password, setPassword]   = useState('');
+    const [firstname, setFirstname]     = useState('');
+    const [lastname, setLastname]       = useState('');
+    const [mail, setMail]               = useState('');
+    const [date, setDate]               = useState('');
+    const [password, setPassword]       = useState('');
     const [validation, setValidation]   = useState([]);
-    const navigate                  = useNavigate();
+    const navigate                      = useNavigate();
 
     const passwordValidation = () => { 
         setValidation([])
@@ -46,7 +47,8 @@ const Register = () => {
         e.preventDefault();
         if(passwordValidation()){
             let userInput = {
-                "name": name,
+                "firstname": firstname,
+                "lastname": lastname,
                 "mail": mail,
                 "date": date,
                 "password": password,
@@ -63,8 +65,14 @@ const Register = () => {
             <h2>Become a member!</h2>
             <form className='login-form' action="" onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" name='name' onChange={(e) => setName(e.target.value)}/>
+                    <div className='name-form-group'>
+                        <label htmlFor="name">Firstname:</label>
+                        <input  type="text" name='name' onChange={(e) => setFirstname(e.target.value)}/>
+                    </div>
+                    <div className='name-form-group'> 
+                        <label htmlFor="name">Lastname:</label>
+                        <input  type="text" name='name' onChange={(e) => setLastname(e.target.value)}/>
+                    </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="mail">Mail:</label>
