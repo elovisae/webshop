@@ -12,9 +12,19 @@ const Nav = () => {
       <div id="shit">
         <p id="arrow" onClick={() => navigate(-1)}>A</p>
         <Link to='/' className="link"><h1>AMANDA</h1></Link>
-        <div> 
-          <Link to='/login'><img id="user-icon" className="icon" src={user} alt="" /></Link>
-          <Link to='/cart'><img className="icon" src={cart} alt="" /></Link>
+        <div className='right-icons'> 
+            <Link to='/login' className='link icon-link'>
+                <img id="user-icon" className="icon" src={user} alt="" />
+                <p>Log in</p>
+            </Link>
+        
+          
+
+            <Link to='/cart' className='link icon-link'>
+              <img className="icon" src={cart} alt="" />
+              <p>Shopping cart (0)</p>
+            </Link>
+          
         </div>
       </div>
       <nav>

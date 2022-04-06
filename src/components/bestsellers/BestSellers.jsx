@@ -3,22 +3,8 @@ import Nav from '../all/Nav'
 import Footer from '../all/Footer'
 import '../all/items.css'
 import Items from '../all/Items';
-import {
-    beigeBag,
-    blueMiniDress,
-    blueShorts,
-    blueVest,
-    dressPattern,
-    greenBlazer,
-    greenDress,
-    greenPants,
-    pinkBlazer,
-    pinkDress,
-    pinkPants,
-    tote,
-    widePants
+import Sidebar from '../all/Sidebar';
 
-} from '../../img/clothing/clothing';
 
 const BestSellers = (props) => {
     let items = props.items;
@@ -37,9 +23,7 @@ const BestSellers = (props) => {
     <>
         <Nav/>
         <article className="content">
-            <aside>
-                SIDEBAR
-            </aside>
+            <Sidebar />
             <main className='text-left'>
                 <h2>Bestsellers</h2>
                 <Items items={filteredItems}/>

@@ -5,6 +5,9 @@ import BestSellers from './components/bestsellers/BestSellers';
 import ErrorPage from './components/404';
 import ShopAll from './components/shopAll/ShopAll';
 import Cart from './components/Cart/Cart';
+import Login from './components/loginAndRegistration/Login';
+import Register from './components/loginAndRegistration/Register';
+
 
 function App() {
   const [items, setItems] = useState([])   
@@ -26,6 +29,8 @@ function App() {
         <Route path="/bestsellers" element={<BestSellers items={items}/>}/>
         <Route path="/shop/all" element={<ShopAll items={items}/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register />}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </Router>

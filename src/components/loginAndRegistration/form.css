@@ -1,0 +1,35 @@
+@import url('../all/main.css');
+
+.login-form{
+    margin: 20px auto;
+    border:1px solid gray;
+    width:720px;
+    padding: 20px;
+}
+
+form input{
+    width:550px;
+}
+
+.form-group{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.name-form-group{
+    display: flex;
+    align-items: baseline;
+    gap:30px;
+}
+.name-form-group input{
+    width:200px;
+}
+.red{
+    color:red;
+}
+.green{
+    color:green
+}
