@@ -114,19 +114,19 @@ app.post('/users/login', async(req, res) => {
                 if(user.mail === dbUser.mail){
                     doesUserExist = true;
                     if(user.password === dbUser.password){
-                        res.send({message:'Logging in', name: dbUser.name})
+                        res.send({message:'Logging in', name: dbUser.name, loggedIn:true})
                     }else{
 
-                        res.send({message: 'Wrong password, try again'})
+                        res.send({message: 'Wrong password, try again', loggedIn:false})
                     }
                 }
             })
+            if (!doesUserExist){
+                res.send({message: 'A user with that email does not exist', loggedIn:false})
+            }
 
         })
         .catch(error => console.log(error))
-        if (!doesUserExist){
-            res.send({message: 'A user with that email does not exist'})
-        }
 })
 
 app.delete('/users/:userId', async(req, res) => {

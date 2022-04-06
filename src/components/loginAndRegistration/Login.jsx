@@ -10,6 +10,7 @@ const Login = () => {
     const [mail, setMail]               = useState('');
     const [password, setPassword]       = useState('');
     const [validation, setValidation]   = useState('');
+    const [validationColor, setValidationColor] = useState('red')
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,6 +32,15 @@ const Login = () => {
                 })
                 let data = await response.json()
                 setValidation(data.message)
+                if(data.loggedIn){
+                    setValidationColor('green')
+                    setTimeout(() => {
+                        navigate('/skit')
+                        
+                    }, 1000);
+                }else{
+                    setValidationColor('red')
+                }
             }catch(error){
                 console.log(error)
             }
@@ -51,7 +61,7 @@ const Login = () => {
                     <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} required/>
                 </div>
                 <button>Log in</button>
-                <p className='validation'>{validation}</p>
+                <p className={validationColor}>{validation}</p>
             </form>
             <p>Not a member?</p>
             <button onClick={() => navigate('/register')}>Register now</button>
