@@ -27,3 +27,6 @@ form input{
 .name-form-group input{
     width:200px;
 }
+.validation{
+    color:red;
+}

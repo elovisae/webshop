@@ -33,6 +33,7 @@ select, option{
 main{
     min-height:300px;
 }
+
 .content{
     padding-top: 20px;
     display: grid;

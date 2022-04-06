@@ -101,6 +101,32 @@ app.post('/users', async(req, res) => {
             .then(data => res.send({message: 'You are now registered! :)'}))
             .catch(error => console.log(error))
     }
+});
+
+app.post('/users/login', async(req, res) => {
+    console.log('Login request made');
+    let user = new User(req.body);
+    let doesUserExist = false;
+    User.find()
+        .then(result => {
+            const allUsers = result;
+            allUsers.map(dbUser => {
+                if(user.mail === dbUser.mail){
+                    doesUserExist = true;
+                    if(user.password === dbUser.password){
+                        res.send({message:'Logging in', name: dbUser.name})
+                    }else{
+
+                        res.send({message: 'Wrong password, try again'})
+                    }
+                }
+            })
+
+        })
+        .catch(error => console.log(error))
+        if (!doesUserExist){
+            res.send({message: 'A user with that email does not exist'})
+        }
 })
 
 app.delete('/users/:userId', async(req, res) => {
